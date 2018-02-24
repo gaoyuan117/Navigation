@@ -49,14 +49,14 @@ public class CommonApi {
      * 获取验证码
      */
     public static void sendsms(Context context, String type, String phone) {
-        RetrofitClient.getInstance().createApi().sendsms(phone, type)
-                .compose(RxUtils.<HttpResult<CommonBean>>io_main())
-                .subscribe(new BaseObjObserver<CommonBean>(context) {
-                    @Override
-                    protected void onHandleSuccess(CommonBean commonBean) {
-
-                    }
-                });
+//        RetrofitClient.getInstance().createApi().sendsms(phone, type)
+//                .compose(RxUtils.<HttpResult<CommonBean>>io_main())
+//                .subscribe(new BaseObjObserver<CommonBean>(context) {
+//                    @Override
+//                    protected void onHandleSuccess(CommonBean commonBean) {
+//
+//                    }
+//                });
     }
 
     /**

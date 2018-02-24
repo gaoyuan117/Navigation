@@ -1,5 +1,6 @@
 package com.jzbwlkj.navigation.base;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -26,20 +27,20 @@ import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    protected Context mContext;
+    protected Activity activity;
     private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        mContext = this;
+        activity = this;
         ButterKnife.bind(this);
         StatusBarUtil.setColor(this, ContextCompat.getColor(getActivity(), R.color.global),0);
         AppManager.getAppManager().addActivity(this);
         progressDialog = new ProgressDialog(this);
         initView();
-        initDatas();
+        initData();
         configViews();
 
     }
@@ -55,7 +56,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public abstract void initView();
 
-    public abstract void initDatas();
+    public abstract void initData();
     public abstract void configViews();
 
 

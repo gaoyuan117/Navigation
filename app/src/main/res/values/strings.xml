@@ -7,4 +7,5 @@
     <string name="please_input_alone">请输入独立密码</string>
     <string name="please_input_old_pwd">请输入旧密码</string>
     <string name="please_input_new_pwd">请输入新密码</string>
+    <string name="logining">登录中..</string>
 </resources>

@@ -5,6 +5,7 @@ import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 import android.text.TextUtils;
 
+import com.jzbwlkj.navigation.ui.bean.LoginBean;
 import com.jzbwlkj.navigation.utils.SharedPreferencesUtil;
 
 import java.util.HashSet;
@@ -22,6 +23,7 @@ public class BaseApp extends MultiDexApplication {
     private static BaseApp sInstance;
     public static String token;
     public static String phone;
+    public static LoginBean login;
 
     @Override
     public void onCreate() {

@@ -1,9 +1,15 @@
 package com.jzbwlkj.navigation.base;
 
 
+import android.text.TextUtils;
+import android.util.Log;
+
+import com.google.gson.Gson;
 import com.jzbwlkj.navigation.BaseApp;
 import com.jzbwlkj.navigation.R;
+import com.jzbwlkj.navigation.ui.activity.LoginActivity;
 import com.jzbwlkj.navigation.ui.activity.MainActivity;
+import com.jzbwlkj.navigation.ui.bean.LoginBean;
 import com.jzbwlkj.navigation.utils.SharedPreferencesUtil;
 
 import java.util.concurrent.TimeUnit;
@@ -23,22 +29,29 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        token = SharedPreferencesUtil.getInstance().getString("token");
-        BaseApp.phone = SharedPreferencesUtil.getInstance().getString("phone");
-        BaseApp.token = token;
+        String s = SharedPreferencesUtil.getInstance().getString("login");
+        if (!TextUtils.isEmpty(s)) {
+            BaseApp.login = new Gson().fromJson(s, LoginBean.class);
+        }
 
         Observable.timer(1, TimeUnit.SECONDS)
                 .subscribe(new Consumer<Long>() {
                     @Override
                     public void accept(Long aLong) throws Exception {
-                        toActivity(MainActivity.class);
+                        if (BaseApp.login == null) {
+                            toActivity(LoginActivity.class);
+                        } else {
+                            BaseApp.token = BaseApp.login.getData().getToken();
+                            BaseApp.phone = BaseApp.login.getData().getUser_login();
+                            toActivity(MainActivity.class);
+                        }
                         finish();
                     }
                 });
     }
 
     @Override
-    public void initDatas() {
+    public void initData() {
 
     }
 
