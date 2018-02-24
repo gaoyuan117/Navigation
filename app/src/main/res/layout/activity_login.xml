@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_bg"
+    android:orientation="vertical"
+    tools:context="com.jzbwlkj.navigation.ui.activity.LoginActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:paddingBottom="100dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="23dp">
+
+            <ImageView
+                android:id="@+id/img_user"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/login_account" />
+
+            <EditText
+                android:id="@+id/et_login_user"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/img_user"
+                android:background="@null"
+                android:hint="手机/邮箱"
+                android:inputType="number"
+                android:maxLength="11"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/et_login_user"
+                android:layout_marginTop="3dp"
+                android:background="@color/line_color" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="6dp">
+
+            <ImageView
+                android:id="@+id/img_pwd"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/login_pwd" />
+
+            <EditText
+                android:id="@+id/et_login_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/img_pwd"
+                android:background="@null"
+                android:hint="密码"
+                android:inputType="textPassword"
+                android:maxLength="11"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/et_login_pwd"
+                android:layout_marginTop="3dp"
+                android:background="@color/line_color" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_login_error_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="6dp"
+            android:gravity="right"
+            android:text="账号密码错误，请重新输入"
+            android:textColor="@color/dark_red"
+            android:textSize="10sp" />
+
+
+        <TextView
+            android:id="@+id/bt_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relativeLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="62dp"
+            android:layout_marginRight="62dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/coner_gloal_all"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+</RelativeLayout>
